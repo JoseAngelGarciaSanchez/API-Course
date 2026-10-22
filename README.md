@@ -35,13 +35,14 @@ Then open <http://127.0.0.1:8000/docs> to try the endpoints in Swagger UI.
 Each lab has an `exercise.py` full of `TODO`s and a `test_*.py` that grades it. A lab is done when all its tests pass:
 
 ```bash
-uv run pytest lab/lab00_python_warmup -v   # one lab
+uv run pytest lab/lab01_first_endpoints -v # one lab
 uv run pytest lab -x                       # every lab, stop at the first failure
 ```
 
+Labs are numbered in the order they appear in the slides.
+
 | # | Topic |
 |---|-------|
-| 00 | Python warm-up: type hints, generators, `async`/`await` |
 | 01 | First endpoints: path, query, header and body parameters |
 | 02 | Pydantic models and validation |
 | 03 | Resource-oriented design: standard methods |
@@ -49,8 +50,9 @@ uv run pytest lab -x                       # every lab, stop at the first failur
 | 05 | Pagination and filtering |
 | 06 | PATCH with field masks, custom methods, soft delete |
 | 07 | JWT authentication |
-| 08 | Calling an external API and serving an ML model |
-| 09 | Reliability: deduplication, retries, backoff |
+| 08 | Reliability: deduplication, retries, backoff |
+| 09 | Python warm-up: type hints, generators, `async`/`await` (can also be done first) |
+| 10 | Calling an external API and serving an ML model |
 
 Full instructions, tips and the final project brief are in [`lab/README.md`](lab/README.md).
 

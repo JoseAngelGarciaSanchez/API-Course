@@ -17,7 +17,7 @@ Install [uv](https://docs.astral.sh/uv/), then from the repository root:
 
 ```bash
 uv sync                                              # creates .venv with FastAPI, Pydantic, httpx2, pytest, ruff
-uv run pytest lab/lab00_python_warmup -v             # run one lab
+uv run pytest lab/lab01_first_endpoints -v           # run one lab
 uv run pytest lab -x                                 # run every lab, stop at the first failure
 uv run pytest lab/lab03_resource_oriented -k patch   # only the tests whose name contains "patch"
 ```
@@ -37,21 +37,25 @@ uv run ruff check lab && uv run ruff format lab
 
 ## The labs
 
-| # | Lab | What you build | Slides | Books |
-|---|-----|----------------|--------|-------|
-| 00 | `lab00_python_warmup` | type hints and generic functions, generators, `async`/`await`, `TaskGroup`, choosing processes vs threads vs async | Types of concurrency | FA ch. 2, 4 |
-| 01 | `lab01_first_endpoints` | GET/POST endpoints, **path / query / header / body** parameters with `Annotated`, status codes, typed responses, OpenAPI | API Endpoints, API Parameters, Status code, OpenAPI | FA ch. 3 |
-| 02 | `lab02_pydantic_models` | `Field` constraints, field and model validators, `default_factory`, input vs output models, **forbidding unknown fields** | Body, Pydantics | FA ch. 5 · ADP ch. 5 |
-| 03 | `lab03_resource_oriented` | the RPC flight-booking API turned into **one resource × five standard methods**, Crockford Base32 ids, `201` + `Location`, PATCH that rejects `null` | What are resource-oriented APIs? | ADP ch. 1, 3, 6, 7 · FA ch. 8 |
-| 04 | `lab04_layers_and_dependencies` | web → service → data layers on SQLite, `Depends`, **exception handlers**, aggregation in SQL, dependency overrides in tests, SQL injection | — | FA ch. 6, 8, 9, 10, 12 |
-| 05 | `lab05_pagination_filtering` | opaque **page tokens**, `max_page_size`, a small filter language, a **query-parameter model** | — | ADP ch. 21, 22 |
-| 06 | `lab06_updates_custom_methods` | PATCH with **field masks**, partial GET, custom methods `POST /x/{id}:verb`, **soft delete** | HTTP methods | ADP ch. 8, 9, 25 |
-| 07 | `lab07_jwt_auth` | **JWT HS256 built by hand**, password hashing, timing-safe login, bearer-token dependency, 401 vs 403, middleware | JSON Web Token | FA ch. 11 · ADP ch. 30 |
-| 08 | `lab08_external_api_and_model` | a deterministic **ML model** served one by one, in batch and **streamed as JSON Lines**; an **async call to the World Bank API** through a client shared by the `lifespan` (mocked in tests), 502/504 | Body (predict), Why build a web API? | FA ch. 4, 12, 14 · ADP ch. 18 |
-| 09 | `lab09_reliability` | **request deduplication** (`request_id` + fingerprint), `validate_only`, client retries with exponential backoff, jitter and `Retry-After` | Status code | ADP ch. 26, 27, 29 |
+The labs are numbered in the order their "Lab" slide appears in the deck. The *Slides* column gives the
+slides to read first, and the page of the lab slide itself.
 
-Labs 00–03 cover the core of the course and labs 04–09 go further. Labs 07 and 08 are the building blocks
-of the final project.
+| # | Lab | What you build | Slides | Lab slide | Books |
+|---|-----|----------------|--------|-----------|-------|
+| 01 | `lab01_first_endpoints` | GET/POST endpoints, **path / query / header / body** parameters with `Annotated`, status codes, typed responses, OpenAPI | API Endpoints → Swagger UI (36–46) | 47 | FA ch. 3 |
+| 02 | `lab02_pydantic_models` | `Field` constraints, field and model validators, `default_factory`, input vs output models, **forbidding unknown fields** | Body, Pydantic (41–43) | 48 | FA ch. 5 · ADP ch. 5 |
+| 03 | `lab03_resource_oriented` | the RPC flight-booking API turned into **one resource × five standard methods**, Crockford Base32 ids, `201` + `Location`, PATCH that rejects `null` | What are resource-oriented APIs? (7–11), HTTP methods (18–20), Status code (21–26) | 49 | ADP ch. 1, 3, 6, 7 · FA ch. 8 |
+| 04 | `lab04_layers_and_dependencies` | web → service → data layers on SQLite, `Depends`, **exception handlers**, aggregation in SQL, dependency overrides in tests, SQL injection | Layered architecture → Persistence (51–54) | 55 | FA ch. 6, 8, 9, 10, 12 |
+| 05 | `lab05_pagination_filtering` | opaque **page tokens**, `max_page_size`, a small filter language, a **query-parameter model** | Large collections (30) | 56 | ADP ch. 21, 22 |
+| 06 | `lab06_updates_custom_methods` | PATCH with **field masks**, partial GET, custom methods `POST /x/{id}:verb`, **soft delete** | HTTP methods (18), Designing resources (29) | 57 | ADP ch. 8, 9, 25 |
+| 07 | `lab07_jwt_auth` | **JWT HS256 built by hand**, password hashing, timing-safe login, bearer-token dependency, 401 vs 403, middleware | JSON Web Token → Auth in FastAPI (58–65) | 66 | FA ch. 11 · ADP ch. 30 |
+| 08 | `lab08_reliability` | **request deduplication** (`request_id` + fingerprint), `validate_only`, client retries with exponential backoff, jitter and `Retry-After` | Retrying failed requests (27), Reliability and versioning (31), Testing your API (67) | 68 | ADP ch. 26, 27, 29 |
+| 09 | `lab09_python_warmup` | type hints and generic functions, generators, `async`/`await`, `TaskGroup`, choosing processes vs threads vs async | Types of concurrency → Concurrency in FastAPI (69–77) | 78 | FA ch. 2, 4 |
+| 10 | `lab10_external_api_and_model` | a deterministic **ML model** served one by one, in batch and **streamed as JSON Lines**; an **async call to the World Bank API** through a client shared by the `lifespan` (mocked in tests), 502/504 | Why build a web API? (5), Body (42), Calling APIs from Python (50), Concurrency in FastAPI (77) | 79 | FA ch. 4, 12, 14 · ADP ch. 18 |
+
+Labs 01–03 cover the core of the course and labs 04–10 go further. Lab 09 (Python warm-up) comes with the
+concurrency slides near the end of the deck, but it is plain Python with no endpoints: you can also do it
+first, as a refresher. Labs 07 and 10 are the building blocks of the final project.
 
 ## Recent FastAPI features used in the labs
 
@@ -65,10 +69,10 @@ FastAPI moved from 0.117 to 0.159 during 2025–2026. These changes matter for t
 | 0.128 | `pydantic.v1` is no longer supported: Pydantic 2 only | all |
 | 0.130 | Responses are serialised by Pydantic in Rust **when the return type is declared**: annotate your endpoints | all |
 | 0.132 | JSON bodies must come with a JSON `Content-Type` header (CSRF protection), otherwise 422 | lab 01 |
-| 0.134 / 0.135 | `yield` in an endpoint streams **JSON Lines**; Server-Sent Events are supported too | lab 08 |
+| 0.134 / 0.135 | `yield` in an endpoint streams **JSON Lines**; Server-Sent Events are supported too | lab 10 |
 | 0.137 | Routers are no longer copied by `include_router`: routes added afterwards still work | lab 04 |
 | 0.151 | In a JSON body, an explicit `null` and an omitted value are now different things | lab 03 |
-| Starlette 1.x | The `TestClient` runs on **httpx2**, the maintained successor of httpx (httpx is deprecated there) | labs 08, 09 |
+| Starlette 1.x | The `TestClient` runs on **httpx2**, the maintained successor of httpx (httpx is deprecated there) | labs 08, 10 |
 
 Full list: <https://fastapi.tiangolo.com/release-notes/>.
 
@@ -90,22 +94,22 @@ Create **your own repository** with a FastAPI API that has a modular, maintainab
 
 1. **POST & GET** endpoints to submit and retrieve data (labs 01–03).
 2. A **`/health`** endpoint for monitoring (lab 01).
-3. A **call to an external API** with `httpx2` (or `requests`), with errors handled (lab 08).
+3. A **call to an external API** with `httpx2` (or `requests`), with errors handled (lab 10).
 4. A **JWT generator endpoint** and token checking on the secured routes (lab 07).
-5. A **small, even deterministic, ML model** served by an endpoint (lab 08).
+5. A **small, even deterministic, ML model** served by an endpoint (lab 10).
 
 Bonus points: tests with `pytest` + `TestClient`, pagination (lab 05), field masks or soft delete (lab 06),
-deduplication of POST requests (lab 09), a streaming endpoint (lab 08), a clean OpenAPI page (titles,
+deduplication of POST requests (lab 08), a streaming endpoint (lab 10), a clean OpenAPI page (titles,
 descriptions, response models), code that passes `ruff check`.
 
 ## For teachers
 
-The reference solutions live in `lab/_solutions/` and answer the questions asked in the `TODO`s in comments.
+The reference solutions live in `lab_solutions/` (repository root) and answer the questions asked in the `TODO`s in comments.
 To check that they pass every test:
 
 ```bash
 LAB_SOLUTION=1 uv run pytest lab
 ```
 
-To publish the exercises without the answers, delete `lab/_solutions/` from the students' branch, or
+To publish the exercises without the answers, delete `lab_solutions/` from the students' branch, or
 add it to `.gitignore`.

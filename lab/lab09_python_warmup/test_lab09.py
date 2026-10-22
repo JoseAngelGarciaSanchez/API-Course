@@ -4,7 +4,7 @@ import pytest
 
 from lab._loader import load
 
-ex = load("lab00_python_warmup")
+ex = load("lab09_python_warmup")
 
 
 def test_average_mark():

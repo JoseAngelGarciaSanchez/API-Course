@@ -10,7 +10,7 @@ from fastapi.testclient import TestClient
 
 from lab._loader import load
 
-ex = load("lab08_external_api_and_model")
+ex = load("lab10_external_api_and_model")
 
 STUDENT = {"id": 7, "last_validate_level": "M1", "last_average_mark": 12, "dedicated_hours": 40}
 # Real answers of https://api.worldbank.org/v2/country/fr?format=json and .../country/zz?format=json

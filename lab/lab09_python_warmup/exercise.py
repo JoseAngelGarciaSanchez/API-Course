@@ -1,7 +1,8 @@
-"""Lab 00 — Python warm-up: type hints, generators, async/await.
+"""Lab 09 — Python warm-up: type hints, generators, async/await.
 
 Goal
-    Refresh the modern Python that FastAPI is built on, before writing any endpoint.
+    Refresh the modern Python that FastAPI is built on. It goes with the concurrency slides,
+    but needs no endpoint: you can also do it first, as a refresher.
 
 You will learn
     * type hints, including Python 3.12 generic functions (``def f[T](...)``)
@@ -15,7 +16,7 @@ References
     Repo   : api/generators.py and api/async_await_asyncio.py
 
 Check your work
-    uv run pytest lab/lab00_python_warmup -v
+    uv run pytest lab/lab09_python_warmup -v
 """
 
 import asyncio
@@ -44,7 +45,7 @@ def chunks[T](items: list[T], size: int) -> Iterator[list[T]]:
     chunks([1, 2, 3, 4, 5], 2) -> [1, 2], [3, 4], [5]
     Raise ``ValueError`` if size <= 0.
     ``[T]`` makes the function generic: chunks of ints are lists of ints.
-    (You'll reuse this idea for pagination in lab 05.)
+    (Lab 05 uses the same idea for pagination.)
     """
     raise NotImplementedError("TODO B2")
 

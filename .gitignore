@@ -162,4 +162,4 @@ cython_debug/
 #.idea/
 
 # Lab reference solutions: kept local, never published to students
-lab/_solutions/
+lab_solutions/

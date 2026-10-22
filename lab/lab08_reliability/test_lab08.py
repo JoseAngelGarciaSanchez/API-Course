@@ -8,7 +8,7 @@ from fastapi.testclient import TestClient
 
 from lab._loader import load
 
-ex = load("lab09_reliability")
+ex = load("lab08_reliability")
 
 PAY = {"amount": 100, "currency": "EUR", "to": "Lea"}
 

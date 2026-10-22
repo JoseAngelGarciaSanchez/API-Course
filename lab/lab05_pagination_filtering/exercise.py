@@ -18,7 +18,7 @@ The response shape (the List standard method of [ADP])::
 References
     Books  : [ADP] ch. 21 (Pagination), ch. 22 (Filtering) ; [FA] ch. 8 (query parameters)
     Docs   : https://fastapi.tiangolo.com/tutorial/query-param-models/
-    Lab 00 : you already wrote chunks(); this is the API version of it.
+    Lab 09 : chunks() there is the plain-Python version of this (do it first if you like).
 
 Run it
     uv run uvicorn lab.lab05_pagination_filtering.exercise:app --reload

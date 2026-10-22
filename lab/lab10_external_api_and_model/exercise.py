@@ -1,4 +1,4 @@
-"""Lab 08 — Serve a (tiny) ML model and call an external API.
+"""Lab 10 — Serve a (tiny) ML model and call an external API.
 
 Goal
     Two building blocks of the final project: a prediction endpoint, and an endpoint
@@ -23,11 +23,11 @@ References
              https://datahelpdesk.worldbank.org/knowledgebase/articles/898590 (World Bank country API)
 
 Run it against the real World Bank API (no key needed)
-    uv run uvicorn lab.lab08_external_api_and_model.exercise:app --reload
+    uv run uvicorn lab.lab10_external_api_and_model.exercise:app --reload
     # http://127.0.0.1:8000/countries/fr
 
 Check your work (the tests never touch the network)
-    uv run pytest lab/lab08_external_api_and_model -v
+    uv run pytest lab/lab10_external_api_and_model -v
 """
 
 from collections.abc import AsyncIterator, Iterable  # noqa: F401

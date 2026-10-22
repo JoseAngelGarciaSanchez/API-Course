@@ -1,4 +1,4 @@
-"""Lab 09 — Reliability: deduplication, validation-only requests, retries.
+"""Lab 08 — Reliability: deduplication, validation-only requests, retries.
 
 Goal
     Make a payment API safe to retry, and write the client that retries it.
@@ -23,10 +23,10 @@ References
             https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
 
 Run it
-    uv run uvicorn lab.lab09_reliability.exercise:app --reload
+    uv run uvicorn lab.lab08_reliability.exercise:app --reload
 
 Check your work
-    uv run pytest lab/lab09_reliability -v
+    uv run pytest lab/lab08_reliability -v
 """
 
 import hashlib  # noqa: F401

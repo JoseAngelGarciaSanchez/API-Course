@@ -1,7 +1,6 @@
 # Lab — Building APIs with FastAPI
 
-Hands-on, auto-graded exercises for the *Introduction to API* course (Master 2 MoSEF Data Science,
-Université Paris 1 Panthéon-Sorbonne). They follow the slides and two books:
+Hands-on, auto-graded exercises for the *Introduction to API* course. They follow the slides and two books:
 
 - **[FA]** Bill Lubanovic, *FastAPI: Modern Python Web Development*, O'Reilly, 2023
 - **[ADP]** JJ Geewax, *API Design Patterns*, Manning, 2021
@@ -42,6 +41,7 @@ slides to read first, and the page of the lab slide itself.
 
 | # | Lab | What you build | Slides | Lab slide | Books |
 |---|-----|----------------|--------|-----------|-------|
+| 00 | `lab00_query_open_apis` | **calling** an open API ([JSONPlaceholder](https://jsonplaceholder.typicode.com)) with `httpx2`: GET, query parameters, 404 handling, POST; then pick another one from [public-apis](https://github.com/public-apis/public-apis) | Calling APIs from Python (50) | — | FA ch. 3 |
 | 01 | `lab01_first_endpoints` | GET/POST endpoints, **path / query / header / body** parameters with `Annotated`, status codes, typed responses, OpenAPI | API Endpoints → Swagger UI (36–46) | 47 | FA ch. 3 |
 | 02 | `lab02_pydantic_models` | `Field` constraints, field and model validators, `default_factory`, input vs output models, **forbidding unknown fields** | Body, Pydantic (41–43) | 48 | FA ch. 5 · ADP ch. 5 |
 | 03 | `lab03_resource_oriented` | the RPC flight-booking API turned into **one resource × five standard methods**, Crockford Base32 ids, `201` + `Location`, PATCH that rejects `null` | What are resource-oriented APIs? (7–11), HTTP methods (18–20), Status code (21–26) | 49 | ADP ch. 1, 3, 6, 7 · FA ch. 8 |
@@ -53,7 +53,7 @@ slides to read first, and the page of the lab slide itself.
 | 09 | `lab09_python_warmup` | type hints and generic functions, generators, `async`/`await`, `TaskGroup`, choosing processes vs threads vs async | Types of concurrency → Concurrency in FastAPI (69–77) | 78 | FA ch. 2, 4 |
 | 10 | `lab10_external_api_and_model` | a deterministic **ML model** served one by one, in batch and **streamed as JSON Lines**; an **async call to the World Bank API** through a client shared by the `lifespan` (mocked in tests), 502/504 | Why build a web API? (5), Body (42), Calling APIs from Python (50), Concurrency in FastAPI (77) | 79 | FA ch. 4, 12, 14 · ADP ch. 18 |
 
-Labs 01–03 cover the core of the course and labs 04–10 go further. Lab 09 (Python warm-up) comes with the
+Lab 00 is a warm-up: you only consume an API, no FastAPI yet. Labs 01–03 cover the core of the course and labs 04–10 go further. Lab 09 (Python warm-up) comes with the
 concurrency slides near the end of the deck, but it is plain Python with no endpoints: you can also do it
 first, as a refresher. Labs 07 and 10 are the building blocks of the final project.
 

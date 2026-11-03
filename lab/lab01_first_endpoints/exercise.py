@@ -28,7 +28,7 @@ from typing import Annotated  # noqa: F401
 from fastapi import FastAPI, Header, HTTPException, Path, Query, status  # noqa: F401
 from pydantic import BaseModel
 
-# TODO 0: give the API the title "MoSEF Annuaire" (it shows up in /docs and
+# TODO 0: give the API the title "Student Directory" (it shows up in /docs and
 #         in /openapi.json -> info.title).
 app = FastAPI()
 

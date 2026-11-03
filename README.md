@@ -1,7 +1,6 @@
 # API-Course
 
-Course material for **Introduction to APIs with FastAPI**, Master 2 MoSEF Data Science
-(Université Paris 1 Panthéon-Sorbonne): slides, live-coding examples and auto-graded labs.
+Course material for **Introduction to APIs with FastAPI**: slides, live-coding examples and auto-graded labs.
 
 ## What's inside
 
@@ -10,7 +9,7 @@ Course material for **Introduction to APIs with FastAPI**, Master 2 MoSEF Data S
 | [`slides/api_slides.pdf`](slides/api_slides.pdf) | Course slides |
 | [`api/`](api/) | Live-coding examples from class: a first FastAPI app, generators, `async`/`await` |
 | [`data_models/`](data_models/) | Pydantic models and fake data used by `api/main.py` |
-| [`lab/`](lab/README.md) | 10 hands-on labs, each graded by its own pytest tests |
+| [`lab/`](lab/README.md) | 11 hands-on labs, each graded by its own pytest tests |
 
 ## Setup
 
@@ -43,6 +42,7 @@ Labs are numbered in the order they appear in the slides.
 
 | # | Topic |
 |---|-------|
+| 00 | Warm-up: query an open API (JSONPlaceholder) |
 | 01 | First endpoints: path, query, header and body parameters |
 | 02 | Pydantic models and validation |
 | 03 | Resource-oriented design: standard methods |

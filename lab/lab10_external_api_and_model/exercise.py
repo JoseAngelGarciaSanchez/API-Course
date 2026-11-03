@@ -133,7 +133,7 @@ def get_http_client(request: Request) -> httpx2.AsyncClient:
 
 
 # --- Part C: the API ----------------------------------------------------------
-app = FastAPI(title="MoSEF predictions", lifespan=lifespan)
+app = FastAPI(title="Predictions", lifespan=lifespan)
 HTTP = Annotated[httpx2.AsyncClient, Depends(get_http_client)]
 
 

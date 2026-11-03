@@ -16,7 +16,7 @@ def client():
 
 
 def test_title(client):
-    assert client.get("/openapi.json").json()["info"]["title"] == "MoSEF Annuaire"
+    assert client.get("/openapi.json").json()["info"]["title"] == "Student Directory"
 
 
 def test_hi(client):
